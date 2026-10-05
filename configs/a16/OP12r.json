@@ -26,5 +26,7 @@
   "ntsync": true,
   "blacklist_modules": "",
   "uname": "OP-Ultra",
+  "KERNEL_IMAGE_NAME": "init_boot",
+  "flash_init_boot": true,
   "EXTRA_CMDS": "scripts/config --disable CONFIG_MODULE_SIG && scripts/config --disable CONFIG_MODULE_SIG_FORCE"
 }
