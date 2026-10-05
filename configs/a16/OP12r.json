@@ -25,5 +25,6 @@
   "unicode": true,
   "ntsync": true,
   "blacklist_modules": "",
-  "uname": "OP-Ultra"
+  "uname": "OP-Ultra",
+  "EXTRA_CMDS": "scripts/config --disable CONFIG_MODULE_SIG && scripts/config --disable CONFIG_MODULE_SIG_FORCE"
 }
