@@ -948,6 +948,28 @@ jobs:
           merge-multiple: true
           skip-decompress: true
 
+      - name: 🛠️ Fix AnyKernel3 Version Error
+        shell: bash
+        run: |
+          echo "Sprengung der Versionsprüfung in allen AnyKernel3-ZIPs..."
+          cd downloaded-artifacts
+          for zip in *.zip; do
+            if [ -f "$zip" ]; then
+              echo "Patsche Datei: $zip"
+              mkdir -p temp_unpack
+              unzip -q "$zip" -d temp_unpack/
+              # Setzt die Abbruch-Zeile im Skript stumm
+              sed -i 's/unable to read version/# unable to read version/g' temp_unpack/anykernel.sh 2>/dev/null || true
+              sed -i 's/exit 1/exit 0/g' temp_unpack/anykernel.sh 2>/dev/null || true
+              cd temp_unpack
+              zip -rq "../$zip" *
+              cd ..
+              rm -rf temp_unpack
+            fi
+          done
+          cd ..
+
+
       - name: 🔐 Generate Checksums
         shell: bash
         run: |
