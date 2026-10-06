@@ -27,5 +27,5 @@
   "blacklist_modules": "",
   "uname": "OP-Ultra",
   "KERNEL_IMAGE_NAME": "Image",
-  "EXTRA_CMDS": "scripts/config --disable CONFIG_MODULE_SIG && scripts/config --disable CONFIG_MODULE_SIG_FORCE && scripts/config --enable CONFIG_SUKISU && scripts/config --enable CONFIG_TCP_CONG_BBR && scripts/config --set-str CONFIG_DEFAULT_TCP_CONG bbr && find . -name 'anykernel.sh' -exec sed -i 's/unable to read version/# unable to read version/g' {} + 2>/dev/null || true"
+  "EXTRA_CMDS": "scripts/config --disable CONFIG_MODULE_SIG && scripts/config --disable CONFIG_MODULE_SIG_FORCE && scripts/config --enable CONFIG_SUKISU && scripts/config --enable CONFIG_TCP_CONG_BBR && scripts/config --set-str CONFIG_DEFAULT_TCP_CONG bbr"
 }
